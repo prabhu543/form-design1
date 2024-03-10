@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #1c1f2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    position: relative;
+    transform: translateY(-100px);
+}
+.container:before{
+    content: '';
+    position: absolute;
+    top: 200px;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    animation: circle 4s ease-in-out infinite;
+}
+@keyframes circle{
+    0%{
+        transform: translateX(15px);
+    }
+    50%{
+        transform: translateX(-15px);
+    }
+    100%{
+        transform: translateX(15px);
+    }
+}
+
+.container::after{
+    content: '';
+    position: absolute;
+    top: 400px;
+    width: 500px;
+    height: 95px;
+    background: #fe4e4e;
+    /* border-top-left-radius:100px;
+    border-top-right-radius:100px; */
+    transform: translateX(-150px);
+    /* border-radius: 50%; */
+}
+
+.container .loader{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    animation:  anime 4s ease-in-out infinite;
+}
+@keyframes anime{
+    0%{
+        transform: rotate(50deg);
+    }
+    50%{
+        transform: rotate(-50deg);
+    }
+    100%{
+        transform: rotate(50deg);
+    }
+}
+
+.container .loader::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #06c8f0;
+    border-bottom-left-radius:100px;
+    border-bottom-right-radius:100px;
+}
+
+.container .loader .ball{
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    width: 40px;
+    height: 40px;
+    background:linear-gradient(45deg,#ffffffee,rgba(242, 10, 215, 0.838));
+    border-radius: 50%;
+    transform: translateY(-41px);
+    animation:  ball 4s ease-in-out infinite;
+}
+@keyframes ball{
+    0%{
+        transform: translateY(-100%);
+    }
+    50%{
+        transform: translateY(-100%) translateX(180px) ;
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+} 
